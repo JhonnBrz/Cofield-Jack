@@ -27,6 +27,22 @@
     });
   }
 
+  /* ---------- menu (abaixo de 1080px) ---------- */
+  const menuBtn = document.querySelector('[data-menu-btn]');
+  const hdrEl = document.querySelector('[data-hdr]');
+  if (menuBtn && hdrEl) {
+    const setMenu = (open) => {
+      hdrEl.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', open);
+    };
+    menuBtn.addEventListener('click', () => setMenu(!hdrEl.classList.contains('is-open')));
+    document.getElementById('menu-principal').addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hdrEl.classList.contains('is-open')) { setMenu(false); menuBtn.focus(); }
+    });
+    window.matchMedia('(min-width: 1081px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
+  }
+
   /* ---------- entrada dos elementos ---------- */
   const inEls = [...document.querySelectorAll('[data-in]')];
   // escalonamento por grupo de irmãos
@@ -57,7 +73,7 @@
     start: parseFloat(el.dataset.start || '1'),
     end: parseFloat(el.dataset.end || '0.3'),
     last: -1,
-    counter: el.querySelector('.res__big span'),
+    counter: el.querySelector('.res__n'),
     cut: parseFloat(getComputedStyle(el).getPropertyValue('--cut')) || 0,
   }));
   const readbar = document.querySelector('[data-readbar]');
@@ -89,7 +105,7 @@
     if (hdr) {
       const down = y > lastY + 4;
       const up = y < lastY - 4;
-      if (y < 200 || up) hdr.classList.remove('is-hidden');
+      if (y < 200 || up || hdr.classList.contains('is-open')) hdr.classList.remove('is-hidden');
       else if (down) hdr.classList.add('is-hidden');
     }
     lastY = y;
@@ -134,9 +150,10 @@
 
   /* ---------- telas do hero (abas) ---------- */
   const tabs = [...document.querySelectorAll('.screen__tabs [role="tab"]')];
-  const views = [...document.querySelectorAll('.screen__view img')];
+  const views = [...document.querySelectorAll('.screen__panel')];
   let current = 0;
   let timer = null;
+  let userStopped = false;
   const show = (i, focus = false) => {
     current = (i + tabs.length) % tabs.length;
     tabs.forEach((t, j) => {
@@ -145,9 +162,15 @@
       t.tabIndex = on ? 0 : -1;
       if (on && focus) t.focus();
     });
-    views.forEach((v, j) => v.classList.toggle('is-on', j === current));
+    views.forEach((v, j) => {
+      const on = j === current;
+      v.classList.toggle('is-on', on);
+      if (on) { v.removeAttribute('aria-hidden'); v.inert = false; }
+      else { v.setAttribute('aria-hidden', 'true'); v.inert = true; }
+    });
   };
-  const stop = () => { clearInterval(timer); timer = null; };
+  const pause = () => { clearInterval(timer); timer = null; };
+  const stop = () => { userStopped = true; pause(); };
   tabs.forEach((t, i) => {
     t.addEventListener('click', () => { stop(); show(i); });
     t.addEventListener('keydown', (e) => {
@@ -157,10 +180,11 @@
   });
   if (!reduce && tabs.length) {
     const screen = document.querySelector('.screen');
-    const start = () => { if (!timer) timer = setInterval(() => show(current + 1), 5200); };
-    // só alterna enquanto a tela está visível
-    new IntersectionObserver(([en]) => (en.isIntersecting ? start() : stop()), { threshold: 0.3 }).observe(screen);
+    const start = () => { if (!timer && !userStopped) timer = setInterval(() => show(current + 1), 5200); };
+    // só alterna enquanto a tela está visível; para de vez quando a pessoa interage
+    new IntersectionObserver(([en]) => (en.isIntersecting ? start() : pause()), { threshold: 0.3 }).observe(screen);
     screen.addEventListener('pointerenter', stop, { once: true });
+    screen.addEventListener('focusin', stop, { once: true });
   }
 
   /* ---------- marquee de clientes ---------- */
@@ -171,6 +195,16 @@
       c.setAttribute('aria-hidden', 'true');
       c.querySelector('img').alt = '';
       track.appendChild(c);
+    });
+  }
+  const marquee = document.querySelector('[data-marquee]');
+  const mBtn = document.querySelector('[data-marquee-btn]');
+  if (marquee && mBtn) {
+    const mLabel = mBtn.querySelector('[data-marquee-label]');
+    mBtn.addEventListener('click', () => {
+      const paused = marquee.classList.toggle('is-paused');
+      mBtn.toggleAttribute('data-paused', paused);
+      mLabel.textContent = paused ? 'Continuar' : 'Pausar';
     });
   }
 

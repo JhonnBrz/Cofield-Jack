@@ -31,14 +31,19 @@
       <a class="hdr__logo" href="#topo" aria-label="Cofield, voltar ao início">
         <img src="assets/img/logo-dark-full.svg" alt="" width="136" height="32">
       </a>
-      <nav class="hdr__nav" aria-label="Principal">
+      <nav class="hdr__nav" id="menu-principal" aria-label="Principal">
         <a href="#solucao">Solução</a>
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#como-funciona">Como funciona</a>
+        <a class="hdr__nav-login" href="https://cofield.com.br/login">Entrar</a>
       </nav>
       <div class="hdr__act">
         <a class="hdr__login" href="https://cofield.com.br/login">Entrar</a>
         <a class="btn btn--ink btn--sm" href="https://cofield.com.br/register">Começar grátis</a>
+        <button class="hdr__menu" type="button" aria-expanded="false" aria-controls="menu-principal" data-menu-btn>
+          <span class="hdr__menu-ico" aria-hidden="true"><i></i><i></i></span>
+          Menu
+        </button>
       </div>
     </div>
     <!-- linha do tempo: progresso de leitura -->
@@ -76,9 +81,9 @@
             </div>
           </div>
           <div class="screen__view">
-            <img id="v-gantt" role="tabpanel" aria-labelledby="t-gantt" class="is-on" src="assets/img/Mockup-gantt.webp" width="2000" height="1048" alt="Cronograma do Cofield mostrando o Gantt de uma obra em andamento" fetchpriority="high">
-            <img id="v-lb" role="tabpanel" aria-labelledby="t-lb" src="assets/img/Mockup-lb.webp" width="2000" height="1048" alt="Linha de balanço do Cofield mostrando o avanço das torres por pavimento" loading="lazy">
-            <img id="v-esc" role="tabpanel" aria-labelledby="t-esc" src="assets/img/Mockup-escadinha.webp" width="2000" height="1048" alt="Escadinha do Cofield mostrando as datas de cada etapa por pavimento" loading="lazy">
+            <div class="screen__panel is-on" id="v-gantt" role="tabpanel" aria-labelledby="t-gantt"><img src="assets/img/Mockup-gantt.webp" width="2000" height="1048" alt="Cronograma do Cofield mostrando o Gantt de uma obra em andamento" fetchpriority="high"></div>
+            <div class="screen__panel" id="v-lb" role="tabpanel" aria-labelledby="t-lb" aria-hidden="true" inert><img src="assets/img/Mockup-lb.webp" width="2000" height="1048" alt="Linha de balanço do Cofield mostrando o avanço das torres por pavimento" loading="lazy"></div>
+            <div class="screen__panel" id="v-esc" role="tabpanel" aria-labelledby="t-esc" aria-hidden="true" inert><img src="assets/img/Mockup-escadinha.webp" width="2000" height="1048" alt="Escadinha do Cofield mostrando as datas de cada etapa por pavimento" loading="lazy"></div>
           </div>
         </figure>
       </div>
@@ -96,9 +101,13 @@
     <section class="logos" aria-labelledby="logos-title">
       <div class="wrap logos__head">
         <p class="logos__title" id="logos-title"><span class="mono">+300</span> Mais de 300 obras rodando Cofield</p>
+        <button class="logos__pause" type="button" data-marquee-btn>
+          <span class="logos__pause-ico" aria-hidden="true"></span>
+          <span data-marquee-label>Pausar</span><span class="sr-only"> carrossel de logos</span>
+        </button>
       </div>
-      <div class="marquee" aria-label="Empresas que usam o Cofield">
-        <ul class="marquee__track">
+      <div class="marquee" data-marquee>
+        <ul class="marquee__track" aria-label="Empresas que usam o Cofield">
           <li><img src="assets/img/clients/Absoluta.png" alt="Absoluta" loading="lazy"></li>
           <li><img src="assets/img/clients/Aviva.png" alt="Aviva" loading="lazy"></li>
           <li><img src="assets/img/clients/Baggio.png" alt="Baggio" loading="lazy"></li>
@@ -120,7 +129,7 @@
       <div class="wrap">
         <header class="sec__head">
           <p class="eyebrow" data-in>A escolha é sua</p>
-          <h2 class="sec__title" id="vs-title" data-in>Improviso <span class="x" aria-label="versus">×</span> Controle.</h2>
+          <h2 class="sec__title" id="vs-title" data-in>Improviso <span class="x" aria-hidden="true">×</span><span class="sr-only">versus</span> Controle.</h2>
           <p class="sec__lead" data-in>Duas formas de gerir a mesma obra. Resultados completamente diferentes.</p>
         </header>
 
@@ -210,23 +219,23 @@
     <!-- ============ NÚMEROS ============ -->
     <section class="sec numbers" aria-labelledby="num-title">
       <div class="wrap">
-        <p class="eyebrow eyebrow--dark" id="num-title" data-in>Nossos números</p>
+        <h2 class="eyebrow eyebrow--dark" id="num-title" data-in>Nossos números</h2>
         <dl class="numbers__grid">
           <div class="stat" data-in>
             <dt>Usuários ativos</dt>
-            <dd><span class="stat__pre">+</span><span data-count="350">350</span></dd>
+            <dd><span class="sr-only">+350</span><span aria-hidden="true"><span class="stat__pre">+</span><span data-count="350">350</span></span></dd>
           </div>
           <div class="stat" data-in>
             <dt>Empresas</dt>
-            <dd><span class="stat__pre">+</span><span data-count="200">200</span></dd>
+            <dd><span class="sr-only">+200</span><span aria-hidden="true"><span class="stat__pre">+</span><span data-count="200">200</span></span></dd>
           </div>
           <div class="stat" data-in>
             <dt>Obras rodando</dt>
-            <dd><span class="stat__pre">+</span><span data-count="300">300</span></dd>
+            <dd><span class="sr-only">+300</span><span aria-hidden="true"><span class="stat__pre">+</span><span data-count="300">300</span></span></dd>
           </div>
           <div class="stat" data-in>
             <dt>em custo de obras</dt>
-            <dd><span class="stat__pre">+R$&nbsp;</span><span data-count="2.5" data-decimals="1">2,5</span><span class="stat__suf">B</span></dd>
+            <dd><span class="sr-only">mais de R$ 2,5 bilhões</span><span aria-hidden="true"><span class="stat__pre">+R$&nbsp;</span><span data-count="2.5" data-decimals="1">2,5</span><span class="stat__suf">B</span></span></dd>
           </div>
         </dl>
         <div class="numbers__cta" data-in>
@@ -331,10 +340,7 @@
               <h3>Dashboard modular</h3>
               <p>Monte painéis do seu jeito. Escolha e organize os indicadores de prazo, custo e execução que fazem sentido para o processo de cada empresa, com a mesma base de dados para escritório e campo.</p>
               <div class="mod__media mod__media--inline">
-                <div class="shot shot--layer">
-                  <img src="assets/img/Mockup-escadinha.webp" width="2000" height="1048" alt="Painel do Cofield com datas de cada etapa por pavimento" loading="lazy">
-                  <img class="shot__float" src="assets/img/Mockup-dasboard.webp" width="594" height="81" alt="Barra de edição de layout do dashboard do Cofield" loading="lazy">
-                </div>
+                <div class="shot shot--strip"><img src="assets/img/Mockup-dasboard.webp" width="594" height="81" alt="Barra de edição de layout do dashboard do Cofield" loading="lazy"></div>
               </div>
             </article>
 
@@ -368,10 +374,7 @@
                   <div class="shot"><img src="assets/img/Mockup-Restricoes.webp" width="2000" height="857" alt="" loading="lazy"></div>
                 </div>
                 <div class="eco__slide" data-slide="2">
-                  <div class="shot shot--layer">
-                    <img src="assets/img/Mockup-escadinha.webp" width="2000" height="1048" alt="" loading="lazy">
-                    <img class="shot__float" src="assets/img/Mockup-dasboard.webp" width="594" height="81" alt="" loading="lazy">
-                  </div>
+                  <div class="shot shot--strip"><img src="assets/img/Mockup-dasboard.webp" width="594" height="81" alt="" loading="lazy"></div>
                 </div>
                 <div class="eco__slide" data-slide="3">
                   <div class="shot"><img src="assets/img/Mockup-LPS.webp" width="2000" height="741" alt="" loading="lazy"></div>
@@ -400,12 +403,12 @@
 
         <div class="results__grid">
           <div class="res" data-progress data-start="0.9" data-end="0.45" style="--cut:20">
-            <p class="res__big"><span>20</span>%</p>
+            <p class="res__big"><span class="sr-only">20%</span><span aria-hidden="true"><span class="res__n">20</span>%</span></p>
             <p class="res__label">Redução de prazo em obras estruturadas</p>
             <div class="res__meter" aria-hidden="true"><span class="res__keep"></span><span class="res__gone"></span></div>
           </div>
           <div class="res" data-progress data-start="0.9" data-end="0.45" style="--cut:15">
-            <p class="res__big"><span>15</span>%</p>
+            <p class="res__big"><span class="sr-only">15%</span><span aria-hidden="true"><span class="res__n">15</span>%</span></p>
             <p class="res__label">Redução de custos com menor retrabalho</p>
             <div class="res__meter" aria-hidden="true"><span class="res__keep"></span><span class="res__gone"></span></div>
           </div>
@@ -538,6 +541,14 @@
     </div>
     <div class="wrap ftr__base">
       <p>© 2026 Cofield. Todos os direitos reservados.</p>
+      <p class="ftr__a11y">
+        <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false">
+          <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="16" cy="8.2" r="2.4" fill="currentColor"/>
+          <path d="M8 12.2l8 1.6 8-1.6M16 13.8v5.4M16 19.2l-3.4 7M16 19.2l3.4 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Acessibilidade</span>
+      </p>
     </div>
   </footer>
 
