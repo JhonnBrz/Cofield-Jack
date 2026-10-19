@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cofield · Do canteiro ao escritório, com planejamento, LPS e IA</title>
+  <meta name="description" content="Plataforma de gestão de obras: planejamento, LPS, restrições e dashboard integrados com IA. Teste grátis, sem cartão.">
+  <meta name="theme-color" content="#14181f">
+  <link rel="canonical" href="https://cofield.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cofield">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Cofield · Do canteiro ao escritório, com planejamento, LPS e IA">
+  <meta property="og:description" content="Plataforma de gestão de obras: planejamento, LPS, restrições e dashboard integrados com IA. Teste grátis, sem cartão.">
+  <meta property="og:image" content="assets/img/og-image.png">
+  <link rel="icon" href="assets/img/logo-dark-mark.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="assets/img/logo-white-mark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/Mockup-gantt.webp">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="hdr" data-hdr>
+    <div class="hdr__in wrap">
+      <a class="hdr__logo" href="#topo" aria-label="Cofield, voltar ao início">
+        <img src="assets/img/logo-dark-full.svg" alt="" width="136" height="32">
+      </a>
+      <nav class="hdr__nav" aria-label="Principal">
+        <a href="#solucao">Solução</a>
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#como-funciona">Como funciona</a>
+      </nav>
+      <div class="hdr__act">
+        <a class="hdr__login" href="https://cofield.com.br/login">Entrar</a>
+        <a class="btn btn--ink btn--sm" href="https://cofield.com.br/register">Começar grátis</a>
+      </div>
+    </div>
+    <!-- linha do tempo: progresso de leitura -->
+    <div class="hdr__tl" aria-hidden="true"><span class="hdr__tl-bar" data-readbar></span></div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="topo" aria-labelledby="hero-title">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="wrap hero__copy">
+        <h1 class="hero__title" id="hero-title">
+          <span class="line" data-in><span>Escritório e canteiro</span></span>
+          <span class="line" data-in><span>conectados.</span></span>
+        </h1>
+        <div class="hero__foot">
+          <p class="hero__sub" data-in>Menos retrabalho, obra no prazo.</p>
+          <a class="btn btn--green btn--lg" href="https://cofield.com.br/register" data-in>
+            Começar grátis
+            <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-5L15 10l-4.5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="wrap hero__stage" data-progress data-start="1.05" data-end="0.35">
+        <figure class="screen" data-in>
+          <div class="screen__bar">
+            <span class="screen__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="screen__url">cofield.com.br</span>
+            <div class="screen__tabs" role="tablist" aria-label="Visualizações do cronograma">
+              <button role="tab" aria-selected="true" aria-controls="v-gantt" id="t-gantt" data-view="0">Gantt</button>
+              <button role="tab" aria-selected="false" aria-controls="v-lb" id="t-lb" data-view="1" tabindex="-1">Linha de balanço</button>
+              <button role="tab" aria-selected="false" aria-controls="v-esc" id="t-esc" data-view="2" tabindex="-1">Escadinha</button>
+            </div>
+          </div>
+          <div class="screen__view">
+            <img id="v-gantt" role="tabpanel" aria-labelledby="t-gantt" class="is-on" src="assets/img/Mockup-gantt.webp" width="2000" height="1048" alt="Cronograma do Cofield mostrando o Gantt de uma obra em andamento" fetchpriority="high">
+            <img id="v-lb" role="tabpanel" aria-labelledby="t-lb" src="assets/img/Mockup-lb.webp" width="2000" height="1048" alt="Linha de balanço do Cofield mostrando o avanço das torres por pavimento" loading="lazy">
+            <img id="v-esc" role="tabpanel" aria-labelledby="t-esc" src="assets/img/Mockup-escadinha.webp" width="2000" height="1048" alt="Escadinha do Cofield mostrando as datas de cada etapa por pavimento" loading="lazy">
+          </div>
+        </figure>
+      </div>
+
+      <div class="wrap hero__after">
+        <p class="hero__lead" data-in>Do cronograma à programação semanal, com restrições, custos e dashboard no mesmo lugar, e IA para planejar em minutos.</p>
+        <p class="hero__stat" data-in>
+          <span class="hero__stat-n"><small>Até</small> 22%</span>
+          <span class="hero__stat-t">de perda na obra podem virar resultado</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CLIENTES ============ -->
+    <section class="logos" aria-labelledby="logos-title">
+      <div class="wrap logos__head">
+        <p class="logos__title" id="logos-title"><span class="mono">+300</span> Mais de 300 obras rodando Cofield</p>
+      </div>
+      <div class="marquee" aria-label="Empresas que usam o Cofield">
+        <ul class="marquee__track">
+          <li><img src="assets/img/clients/Absoluta.png" alt="Absoluta" loading="lazy"></li>
+          <li><img src="assets/img/clients/Aviva.png" alt="Aviva" loading="lazy"></li>
+          <li><img src="assets/img/clients/Baggio.png" alt="Baggio" loading="lazy"></li>
+          <li><img src="assets/img/clients/Bunge.svg" alt="Bunge" loading="lazy"></li>
+          <li><img src="assets/img/clients/Cavazani.svg" alt="Cavazani" loading="lazy"></li>
+          <li><img src="assets/img/clients/Gel.png" alt="Gel" loading="lazy"></li>
+          <li><img src="assets/img/clients/Haacke.avif" alt="Haacke" loading="lazy"></li>
+          <li><img src="assets/img/clients/multiplan.webp" alt="Multiplan" loading="lazy"></li>
+          <li><img src="assets/img/clients/Mivita.png" alt="Mivita" loading="lazy"></li>
+          <li><img src="assets/img/clients/Trinus.png" alt="Trinus" loading="lazy"></li>
+          <li><img src="assets/img/clients/Tucumann.png" alt="Tucumann" loading="lazy"></li>
+          <li><img src="assets/img/clients/Zah.webp" alt="Zah" loading="lazy"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ IMPROVISO × CONTROLE ============ -->
+    <section class="sec versus" id="solucao" aria-labelledby="vs-title">
+      <div class="wrap">
+        <header class="sec__head">
+          <p class="eyebrow" data-in>A escolha é sua</p>
+          <h2 class="sec__title" id="vs-title" data-in>Improviso <span class="x" aria-label="versus">×</span> Controle.</h2>
+          <p class="sec__lead" data-in>Duas formas de gerir a mesma obra. Resultados completamente diferentes.</p>
+        </header>
+
+        <div class="vs">
+          <div class="vs__cols" aria-hidden="true">
+            <p><span class="mono">Gestão tradicional</span> Improviso</p>
+            <span></span>
+            <p><span class="mono">Com Cofield</span> Controle</p>
+          </div>
+
+          <ol class="vs__list">
+            <li class="vs__row" data-progress data-start="0.88" data-end="0.5">
+              <div class="vs__cell vs__cell--bad">
+                <span class="vs__tag mono">Gestão tradicional</span>
+                <h3>Decisões sem dados</h3>
+                <p>O que move a obra é intuição e memória. Sem registros, sem rastreabilidade.</p>
+              </div>
+              <div class="vs__link" aria-hidden="true"><i></i></div>
+              <div class="vs__cell vs__cell--good">
+                <span class="vs__tag mono">Com Cofield</span>
+                <h3>Decisões com dados reais</h3>
+                <p>PPC, restrições e avanço físico visíveis. KPIs atualizados para toda a equipe.</p>
+              </div>
+            </li>
+            <li class="vs__row" data-progress data-start="0.88" data-end="0.5">
+              <div class="vs__cell vs__cell--bad">
+                <span class="vs__tag mono">Gestão tradicional</span>
+                <h3>Zero inteligência artificial</h3>
+                <p>Cronograma em planilha, semanas depois do início. Desatualizado antes de ser entregue.</p>
+              </div>
+              <div class="vs__link" aria-hidden="true"><i></i></div>
+              <div class="vs__cell vs__cell--good">
+                <span class="vs__tag mono">Com Cofield</span>
+                <h3>IA em toda a gestão</h3>
+                <p>Cronograma gerado em minutos, refinado pela equipe e conectado à execução semanal.</p>
+              </div>
+            </li>
+            <li class="vs__row" data-progress data-start="0.88" data-end="0.5">
+              <div class="vs__cell vs__cell--bad">
+                <span class="vs__tag mono">Gestão tradicional</span>
+                <h3>Informações desconectadas</h3>
+                <p>WhatsApp, planilha e reunião informal. Cada um sabe um pedaço. Ninguém tem o todo.</p>
+              </div>
+              <div class="vs__link" aria-hidden="true"><i></i></div>
+              <div class="vs__cell vs__cell--good">
+                <span class="vs__tag mono">Com Cofield</span>
+                <h3>Ecossistema conectado</h3>
+                <p>Planejamento, LPS, restrições e dashboard na mesma plataforma. Escritório e canteiro sempre alinhados.</p>
+              </div>
+            </li>
+            <li class="vs__row" data-progress data-start="0.88" data-end="0.5">
+              <div class="vs__cell vs__cell--bad">
+                <span class="vs__tag mono">Gestão tradicional</span>
+                <h3>Restrições invisíveis</h3>
+                <p>Impedimentos só aparecem quando já paralisaram a equipe. Reação tarde, custo alto.</p>
+              </div>
+              <div class="vs__link" aria-hidden="true"><i></i></div>
+              <div class="vs__cell vs__cell--good">
+                <span class="vs__tag mono">Com Cofield</span>
+                <h3>Restrições antecipadas</h3>
+                <p>Planos de ação com responsáveis antes que o impedimento vire atraso de obra.</p>
+              </div>
+            </li>
+            <li class="vs__row" data-progress data-start="0.88" data-end="0.5">
+              <div class="vs__cell vs__cell--bad">
+                <span class="vs__tag mono">Gestão tradicional</span>
+                <h3>Estouro descoberto no fim</h3>
+                <p>Prazo e custo revisados quando o estrago está feito. A obra termina acima do orçamento.</p>
+              </div>
+              <div class="vs__link" aria-hidden="true"><i></i></div>
+              <div class="vs__cell vs__cell--good">
+                <span class="vs__tag mono">Com Cofield</span>
+                <h3>Desvios antes do estouro</h3>
+                <p>Visibilidade de prazo e execução ao longo do projeto. Você decide com antecedência.</p>
+              </div>
+            </li>
+          </ol>
+
+          <p class="vs__more" data-in>
+            <a class="arrow-link" href="https://cofield.com.br/comparativo/cofield-vs-ms-project">Cofield vs MS Project</a>
+            <a class="arrow-link" href="https://cofield.com.br/comparativo/cofield-vs-planilha">Cofield vs planilha</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NÚMEROS ============ -->
+    <section class="sec numbers" aria-labelledby="num-title">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--dark" id="num-title" data-in>Nossos números</p>
+        <dl class="numbers__grid">
+          <div class="stat" data-in>
+            <dt>Usuários ativos</dt>
+            <dd><span class="stat__pre">+</span><span data-count="350">350</span></dd>
+          </div>
+          <div class="stat" data-in>
+            <dt>Empresas</dt>
+            <dd><span class="stat__pre">+</span><span data-count="200">200</span></dd>
+          </div>
+          <div class="stat" data-in>
+            <dt>Obras rodando</dt>
+            <dd><span class="stat__pre">+</span><span data-count="300">300</span></dd>
+          </div>
+          <div class="stat" data-in>
+            <dt>em custo de obras</dt>
+            <dd><span class="stat__pre">+R$&nbsp;</span><span data-count="2.5" data-decimals="1">2,5</span><span class="stat__suf">B</span></dd>
+          </div>
+        </dl>
+        <div class="numbers__cta" data-in>
+          <a class="btn btn--green btn--lg" href="https://cofield.com.br/register">
+            Quero o controle na minha obra
+            <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-5L15 10l-4.5 5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO FUNCIONA ============ -->
+    <section class="sec how" id="como-funciona" aria-labelledby="how-title">
+      <div class="wrap">
+        <header class="sec__head sec__head--split">
+          <div>
+            <p class="eyebrow" data-in>Como funciona</p>
+            <h2 class="sec__title" id="how-title" data-in>Do cronograma ao canteiro em três passos.</h2>
+          </div>
+          <p class="sec__lead" data-in>Comece pelo planejamento e evolua para o controle semanal com a mesma base de dados.</p>
+        </header>
+
+        <div class="gantt" data-progress data-start="0.75" data-end="0.05">
+          <div class="gantt__head" aria-hidden="true">
+            <span class="gantt__corner mono">Etapa</span>
+            <div class="gantt__weeks mono">
+              <span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span>
+              <span>S7</span><span>S8</span><span>S9</span><span>S10</span><span>S11</span><span>S12</span>
+            </div>
+          </div>
+          <ol class="gantt__rows">
+            <li class="gantt__row" style="--from:0; --to:4; --i:0">
+              <div class="gantt__task">
+                <span class="gantt__n mono">1</span>
+                <div>
+                  <h3>Importe ou gere o cronograma</h3>
+                  <p>Traga seu cronograma ou gere um plano inicial com IA a partir dos dados da obra.</p>
+                </div>
+              </div>
+              <div class="gantt__track" aria-hidden="true"><span class="gantt__bar"></span></div>
+            </li>
+            <li class="gantt__row" style="--from:3; --to:9; --i:1">
+              <div class="gantt__task">
+                <span class="gantt__n mono">2</span>
+                <div>
+                  <h3>Ative suas soluções</h3>
+                  <p>Compromissos semanais, gestão de custos, PPC e planos de ação com responsáveis e prazos claros.</p>
+                </div>
+              </div>
+              <div class="gantt__track" aria-hidden="true"><span class="gantt__bar"></span></div>
+            </li>
+            <li class="gantt__row" style="--from:7; --to:12; --i:2">
+              <div class="gantt__task">
+                <span class="gantt__n mono">3</span>
+                <div>
+                  <h3>Decida com visão única</h3>
+                  <p>Dashboard, alertas e histórico conectados. Escritório e campo na mesma página.</p>
+                </div>
+              </div>
+              <div class="gantt__track" aria-hidden="true"><span class="gantt__bar"></span></div>
+            </li>
+          </ol>
+          <span class="gantt__today" aria-hidden="true"><b>Hoje</b></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ECOSSISTEMA ============ -->
+    <section class="sec eco" id="funcionalidades" aria-labelledby="eco-title">
+      <div class="wrap">
+        <header class="sec__head sec__head--split">
+          <div>
+            <p class="eyebrow" data-in>Ecossistema</p>
+            <h2 class="sec__title" id="eco-title" data-in>Tudo que sua obra precisa, conectado.</h2>
+          </div>
+          <p class="sec__lead" data-in>Módulos que já entregam valor hoje, do cronograma ao semanal, na mesma base de dados.</p>
+        </header>
+
+        <div class="eco__body">
+          <div class="eco__list">
+
+            <article class="mod" id="m-ia" data-eco="0">
+              <h3>Cronograma e planejamento com IA</h3>
+              <p>Monte o cronograma em poucos passos com o assistente de IA: defina fases, pacotes de serviço e repetições (pavimentos, blocos, trechos) com nomes genéricos que se adaptam à sua obra. Não precisa preencher tudo com perfeição, use valores aproximados, refine pelo chat e gere o Gantt, a linha de balanço e o Last Planner automaticamente.</p>
+              <div class="mod__media mod__media--inline">
+                <div class="shot shot--layer">
+                  <img src="assets/img/Mockup-lb.webp" width="2000" height="1048" alt="Linha de balanço gerada no Cofield" loading="lazy">
+                  <img class="shot__float" src="assets/img/Mockup-IA2.webp" width="767" height="94" alt="Assistente de planejamento com IA do Cofield" loading="lazy">
+                </div>
+              </div>
+            </article>
+
+            <article class="mod" id="m-restricoes" data-eco="1">
+              <h3>Restrições</h3>
+              <p>Identifique impedimentos antes que virem atraso. Acompanhe status, responsáveis e prazos em tempo real, com indicadores visuais de quanto já foi removido e o que ainda trava o avanço da obra.</p>
+              <div class="mod__media mod__media--inline">
+                <div class="shot"><img src="assets/img/Mockup-Restricoes.webp" width="2000" height="857" alt="Indicadores de restrições do Cofield: IRR e status" loading="lazy"></div>
+              </div>
+            </article>
+
+            <article class="mod" id="m-dashboard" data-eco="2">
+              <h3>Dashboard modular</h3>
+              <p>Monte painéis do seu jeito. Escolha e organize os indicadores de prazo, custo e execução que fazem sentido para o processo de cada empresa, com a mesma base de dados para escritório e campo.</p>
+              <div class="mod__media mod__media--inline">
+                <div class="shot shot--layer">
+                  <img src="assets/img/Mockup-escadinha.webp" width="2000" height="1048" alt="Painel do Cofield com datas de cada etapa por pavimento" loading="lazy">
+                  <img class="shot__float" src="assets/img/Mockup-dasboard.webp" width="594" height="81" alt="Barra de edição de layout do dashboard do Cofield" loading="lazy">
+                </div>
+              </div>
+            </article>
+
+            <article class="mod" id="m-semanal" data-eco="3">
+              <h3>Semanal (Last Planner System)</h3>
+              <p>Programe a semana com compromissos claros, PPC automático e o motivo de cada atraso registrado, com tarefas omitidas sempre visíveis para toda a equipe.</p>
+              <div class="mod__media mod__media--inline">
+                <div class="shot"><img src="assets/img/Mockup-LPS.webp" width="2000" height="741" alt="Tarefas com motivo de atraso e tarefas omitidas no semanal do Cofield" loading="lazy"></div>
+              </div>
+            </article>
+
+            <article class="mod" id="m-suprimentos" data-eco="4">
+              <h3>Suprimentos Inteligente</h3>
+              <p>Acompanhe cada etapa da compra, da solicitação à mobilização, com o status de atraso calculado automaticamente e conectado ao cronograma da obra.</p>
+              <div class="mod__media mod__media--inline">
+                <div class="shot"><img src="assets/img/Mockup-suprimentos.webp" width="2000" height="1143" alt="Status por etapa de suprimentos no Cofield" loading="lazy"></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="eco__stage" aria-hidden="true">
+            <div class="eco__sticky">
+              <div class="eco__frame">
+                <div class="eco__slide is-on" data-slide="0">
+                  <div class="shot shot--layer">
+                    <img src="assets/img/Mockup-lb.webp" width="2000" height="1048" alt="" loading="lazy">
+                    <img class="shot__float" src="assets/img/Mockup-IA2.webp" width="767" height="94" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="eco__slide" data-slide="1">
+                  <div class="shot"><img src="assets/img/Mockup-Restricoes.webp" width="2000" height="857" alt="" loading="lazy"></div>
+                </div>
+                <div class="eco__slide" data-slide="2">
+                  <div class="shot shot--layer">
+                    <img src="assets/img/Mockup-escadinha.webp" width="2000" height="1048" alt="" loading="lazy">
+                    <img class="shot__float" src="assets/img/Mockup-dasboard.webp" width="594" height="81" alt="" loading="lazy">
+                  </div>
+                </div>
+                <div class="eco__slide" data-slide="3">
+                  <div class="shot"><img src="assets/img/Mockup-LPS.webp" width="2000" height="741" alt="" loading="lazy"></div>
+                </div>
+                <div class="eco__slide" data-slide="4">
+                  <div class="shot"><img src="assets/img/Mockup-suprimentos.webp" width="2000" height="1143" alt="" loading="lazy"></div>
+                </div>
+              </div>
+              <div class="eco__meter"><span class="eco__ticks"><i class="is-on"></i><i></i><i></i><i></i><i></i></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESULTADOS ============ -->
+    <section class="sec results" aria-labelledby="res-title">
+      <div class="wrap">
+        <header class="sec__head sec__head--split">
+          <div>
+            <p class="eyebrow" data-in>Resultados</p>
+            <h2 class="sec__title" id="res-title" data-in>Resultados que entregamos.</h2>
+          </div>
+          <p class="sec__lead" data-in>Obras que estruturam planejamento e controle semanal na plataforma colhem ganhos mensuráveis.</p>
+        </header>
+
+        <div class="results__grid">
+          <div class="res" data-progress data-start="0.9" data-end="0.45" style="--cut:20">
+            <p class="res__big"><span>20</span>%</p>
+            <p class="res__label">Redução de prazo em obras estruturadas</p>
+            <div class="res__meter" aria-hidden="true"><span class="res__keep"></span><span class="res__gone"></span></div>
+          </div>
+          <div class="res" data-progress data-start="0.9" data-end="0.45" style="--cut:15">
+            <p class="res__big"><span>15</span>%</p>
+            <p class="res__label">Redução de custos com menor retrabalho</p>
+            <div class="res__meter" aria-hidden="true"><span class="res__keep"></span><span class="res__gone"></span></div>
+          </div>
+          <div class="res res--count" data-in>
+            <p class="res__big"><span>+300</span></p>
+            <p class="res__label">Obras planejadas na plataforma</p>
+            <div class="res__dots" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PARA QUEM ============ -->
+    <section class="sec who" aria-labelledby="who-title">
+      <div class="wrap">
+        <header class="sec__head sec__head--split">
+          <div>
+            <p class="eyebrow" data-in>Feito para você</p>
+            <h2 class="sec__title" id="who-title" data-in>Para quem é o Cofield?</h2>
+          </div>
+          <p class="sec__lead" data-in>Uma plataforma projetada para os profissionais que conduzem obras do início ao fim.</p>
+        </header>
+
+        <ul class="who__list">
+          <li class="who__row" data-in>
+            <h3>Construtoras</h3>
+            <p>Gerencie múltiplos projetos com visibilidade unificada. Custos, prazos, qualidade e equipes no mesmo ecossistema.</p>
+          </li>
+          <li class="who__row" data-in>
+            <h3>Incorporadoras</h3>
+            <p>Acompanhe o andamento dos empreendimentos com dados precisos. Tome decisões com base em informação real.</p>
+          </li>
+          <li class="who__row" data-in>
+            <h3>Engenheiros</h3>
+            <p>Elimine planilhas e WhatsApp. Tenha o ecossistema completo de gestão de obras, do diário ao orçamento, em uma única plataforma.</p>
+          </li>
+          <li class="who__row" data-in>
+            <h3>Consultores e Planejadores</h3>
+            <p>Implante o método em várias obras de clientes diferentes com a mesma ferramenta. Last Planner, suprimentos e dashboard integrados com IA, prontos para levar sua consultoria de planejamento além da planilha.</p>
+          </li>
+          <li class="who__row" data-in>
+            <h3>Gerenciadoras</h3>
+            <p>Centralize o acompanhamento de obras de múltiplos clientes em um só lugar. Relatórios e indicadores prontos para apresentar.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="sec faq" aria-labelledby="faq-title">
+      <div class="wrap faq__in">
+        <header class="faq__head">
+          <p class="eyebrow" data-in>Perguntas frequentes</p>
+          <h2 class="sec__title" id="faq-title" data-in>Tire suas dúvidas</h2>
+          <p class="sec__lead" data-in>Respostas rápidas antes de começar seu teste grátis.</p>
+        </header>
+        <div class="faq__list">
+          <details class="qa" name="faq" data-in>
+            <summary>O teste grátis exige cartão de crédito?<span class="qa__ico" aria-hidden="true"></span></summary>
+            <p>Não. Você pode criar sua conta e explorar a plataforma sem cartão. Cancele quando quiser.</p>
+          </details>
+          <details class="qa" name="faq" data-in>
+            <summary>Quais módulos estão disponíveis?<span class="qa__ico" aria-hidden="true"></span></summary>
+            <p>Planejamento (Gantt), LPS semanal, restrições com planos de ação, dashboard modular e integrações em evolução conforme seu plano.</p>
+          </details>
+          <details class="qa" name="faq" data-in>
+            <summary>Consigo importar do MS Project?<span class="qa__ico" aria-hidden="true"></span></summary>
+            <p>Sim. Exporte o cronograma em XML no MS Project e importe no Cofield em poucos cliques.</p>
+          </details>
+          <details class="qa" name="faq" data-in>
+            <summary>Quantos usuários posso convidar?<span class="qa__ico" aria-hidden="true"></span></summary>
+            <p>Workspaces e projetos suportam equipes completas. Convide quem precisa no escritório e no canteiro. Construtoras, incorporadoras e gerenciadoras usam o mesmo workspace para gerenciar múltiplos projetos e clientes com visibilidade unificada.</p>
+          </details>
+          <details class="qa" name="faq" data-in>
+            <summary>Funciona para gerenciadoras que atendem vários clientes?<span class="qa__ico" aria-hidden="true"></span></summary>
+            <p>Sim. Gerenciadoras usam o Cofield para centralizar o acompanhamento de obras de múltiplos clientes em um só lugar, com relatórios e indicadores prontos para apresentar.</p>
+          </details>
+          <details class="qa" name="faq" data-in>
+            <summary>O Cofield substitui planilhas e WhatsApp?<span class="qa__ico" aria-hidden="true"></span></summary>
+            <p>Sim. A proposta é eliminar planilhas soltas e conversas espalhadas, reunindo diário, cronograma, restrições e orçamento em uma única plataforma.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="final__grid" aria-hidden="true"></div>
+      <div class="wrap final__in">
+        <h2 class="final__title" id="final-title" data-in>Veja na prática<br>na sua obra.</h2>
+        <div class="final__side" data-in>
+          <p>Crie sua conta em minutos. Teste grátis, cancele quando quiser.</p>
+          <a class="btn btn--green btn--xl" href="https://cofield.com.br/register">
+            Começar grátis
+            <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-5L15 10l-4.5 5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="ftr">
+    <div class="wrap ftr__in">
+      <div class="ftr__brand">
+        <img src="assets/img/logo-white-full.svg" alt="Cofield" width="153" height="36" loading="lazy">
+        <p>O ecossistema completo de gestão de obras, do canteiro ao escritório, com planejamento, LPS e IA integrados.</p>
+        <p class="mono ftr__loc">Curitiba, PR · Brasil</p>
+      </div>
+      <nav class="ftr__col" aria-label="Produto">
+        <h2 class="mono">Produto</h2>
+        <a href="#m-ia">Cronograma e planejamento com IA</a>
+        <a href="#m-restricoes">Restrições</a>
+        <a href="#m-semanal">Semanal (Last Planner System)</a>
+        <a href="#m-dashboard">Dashboard modular</a>
+        <a href="#m-suprimentos">Suprimentos Inteligente</a>
+      </nav>
+      <nav class="ftr__col" aria-label="Recursos">
+        <h2 class="mono">Recursos</h2>
+        <a href="https://cofield.com.br/releases">Novidades</a>
+        <a href="https://cofield.com.br/integracoes">Integrações</a>
+        <a href="https://cofield.com.br/comparativo/cofield-vs-ms-project">Cofield vs MS Project</a>
+        <a href="https://cofield.com.br/comparativo/cofield-vs-planilha">Cofield vs planilha</a>
+      </nav>
+      <nav class="ftr__col" aria-label="Começar">
+        <h2 class="mono">Começar</h2>
+        <a href="https://cofield.com.br/login">Entrar</a>
+        <a href="https://cofield.com.br/register">Começar grátis</a>
+      </nav>
+    </div>
+    <div class="wrap ftr__base">
+      <p>© 2026 Cofield. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/lenis.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
